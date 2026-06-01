@@ -27,7 +27,7 @@ func runGetKustomizations(cmd *cobra.Command, args []string) error {
 
 	list := &kustomizev1.KustomizationList{}
 	listOpts := []client.ListOption{}
-	if namespace != "" {
+	if !allNamespaces && namespace != "" {
 		listOpts = append(listOpts, client.InNamespace(namespace))
 	}
 

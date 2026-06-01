@@ -123,6 +123,7 @@ go build -o bin/sylvactl ./cmd/sylvactl/
 | Flag | Short | Default | Description |
 |------|-------|---------|-------------|
 | `--namespace` | `-n` | all | Namespace to query |
+| `--all-namespaces` | `-A` | false | Query across all namespaces |
 | `--output` | `-o` | `table` | Output format: `table`, `json`, `yaml` |
 | `--kubeconfig` | | `~/.kube/config` | Path to kubeconfig file |
 

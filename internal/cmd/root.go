@@ -7,9 +7,10 @@ import (
 )
 
 var (
-	kubeconfig string
-	namespace  string
-	output     string
+	kubeconfig    string
+	namespace     string
+	output        string
+	allNamespaces bool
 )
 
 var rootCmd = &cobra.Command{
@@ -27,4 +28,5 @@ func init() {
 	rootCmd.PersistentFlags().StringVar(&kubeconfig, "kubeconfig", "", "path to kubeconfig file (default: ~/.kube/config)")
 	rootCmd.PersistentFlags().StringVarP(&namespace, "namespace", "n", "", "namespace to query (default: all namespaces)")
 	rootCmd.PersistentFlags().StringVarP(&output, "output", "o", "table", "output format: table, json, yaml")
+	rootCmd.PersistentFlags().BoolVarP(&allNamespaces, "all-namespaces", "A", false, "query across all namespaces")
 }
